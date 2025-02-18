@@ -49,7 +49,7 @@ export class WorkflowGenerator {
 
     const params: LLMParameters = {
       temperature: 0.7,
-      maxTokens: 8192,
+      maxTokens: 4096,
       tools: [createWorkflowGenerationTool(this.toolRegistry)],
       toolChoice: { type: 'tool', name: 'generate_workflow' },
     };
@@ -148,7 +148,7 @@ export class WorkflowGenerator {
           nodeData.action.description,
           tools,
           this.llmProvider,
-          { maxTokens: 8192 }
+          { maxTokens: 4096 }
         );
 
         const node = {
